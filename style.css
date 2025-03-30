@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+:root {
+
+    /**
+     * colors
+     */
+  
+    --st-patricks-blue: hsl(236, 57%, 28%);
+    --amaranth-purple: hsl(335, 88%, 38%);
+    --royal-blue-dark: hsla(231, 84%, 66%, 0.534);
+    --chrome-yellow: hsl(39, 100%, 52%);
+    --space-cadet-1: hsla(231, 32%, 46%, 0.747);
+    --space-cadet-2: hsl(256, 84%, 17%);
+    --winter-sky_50: hsla(335, 87%, 53%, 0.5);
+    --purple-navy: hsl(236, 26%, 43%);
+    --ksu-purple: hsl(275, 54%, 33%);
+    --winter-sky: hsl(335, 87%, 53%);
+    --razzmatazz: hsl(335, 87%, 51%);
+    --platinum: hsl(0, 0%, 90%);
+    --black_70: hsla(0, 0%, 27%, 0.7);
+    --rajah: hsl(29, 99%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --ocean-blue-dark: #004e92;
+    --ocean-blue-light: #00c6ff;
+    --light-blue: var(--light-blue)
+  
+    --gradient-1: linear-gradient(90deg,var(--royal-blue-dark) 0,var(--ksu-purple) 51%,var(--royal-blue-dark));
+    --gradient-2: linear-gradient(90deg,var(--space-cadet-1) ,var(--white));
+    --gradient-3: linear-gradient(100deg,var(--st-patricks-blue) ,var(--white));
+    --gradient-4: linear-gradient(100deg,var(--black_70),var(--white));
+
+    /**
+     * typography
+     */
+  
+     --ff-source-sans-pro: 'Source Sans Pro', sans-serif;
+     --ff-poppins: 'Poppins', sans-serif;
+   
+     --fs-1: 4.2rem;
+     --fs-2: 3.8rem;
+     --fs-3: 3.2rem;
+     --fs-4: 2.8rem;
+     --fs-5: 2.4rem;
+     --fs-6: 2rem;
+     --fs-7: 1.8rem;
+     --fs-8: 1.5rem;
+   
+     --fw-500: 500;
+     --fw-600: 600;
+     --fw-700: 700;
+   
+     /**
+      * border radius
+      */
+   
+     --radius-4: 4px;
+     --radius-12: 12px;
+   
+     /**
+      * spacing
+      */
+   
+     --section-padding: 60px;
+   
+     /**
+      * transition
+      */
+   
+     --transition-1: 0.15s ease;
+     --transition-2: 0.80s ease;
+     --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+     --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
+   
+     /**
+      * shadow
+      */
+   
+     --shadow: 0 5px 20px 1px hsla(220, 63%, 33%, 0.1);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: block;
+    min-height: 100vh;
+    cursor: default;
+    background-color: #f0f8ff;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 80vh; /* Adjust to control image height */
+    background-image: url('images/under.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .content h2 {
+    font-size: clamp(2rem, 5vw, 4rem); /* Adjusts between 2rem and 4rem based on screen size */
+    text-align: center;
+    color: white; /* Adjust to contrast with background */
+    font-weight: bold;
+}
+
+
+/* SDG Section */
+.sdg-section {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: center; /* Centers them horizontally */
+    gap: 20px; /* Space between image and text */
+    padding: 40px;
+    text-align: left;
+}
+
+/* Adjust Image */
+.sdg-section img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Adjust Text */
+.sdg-section h2 {
+    max-width: 600px; /* Limits text width for better layout */
+    font-size: 1.5em;
+    color: #0f7ca7;
+}
+
+
+/* Content Section Below Hero */
+.content-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.content-section h2 {
+    color: #3d84a5;
+    font-size: 2em;
+}
+
+.content-section p {
+    font-size: 1.2em;
+    color: #333;
+    max-width: 600px;
+    margin: auto;
+}
+
+
+.content{
+    position: relative;
+}
+
+.content h2{
+    position: absolute;
+    color: #fff;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+}
+
+.content h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 2px #3d84a5;
+}
+
+.content h2:nth-child(2){
+    color: #121e24;
+    animation: animate 5s ease-in-out;
+}
+
+@keyframes animate{
+    0%,100%{
+        clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+
+    50%{
+        clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes floatingBubbles {
+    0% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+.bubble-bg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(173, 216, 230, 0.5);
+    border-radius: 50%;
+    animation: floatingBubbles 5s infinite ease-in-out;
+}
+
+
+/* Custom cursor bubble */
+.bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(61, 132, 165, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: bubbleAnimation 0.8s linear infinite;
+}
+
+/* Floating animation */
+@keyframes bubbleAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Wrapper styles */
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card styles */
+.card {
+    width: 280px;
+    height: 360px;
+    background: #fff;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem 1rem;
+    position: relative;
+    transition: 0.5s all ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(13, 36, 63, 0.3), rgba(13, 36, 63, 1));
+    z-index: 2;
+    opacity: 0;
+    transition: 0.5s all;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .info {
+    position: relative;
+    color: #fff;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+    text-align: center;
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card .info h1 {
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card .info p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.card .info .btn {
+    background: #fff;
+    padding: 0.5rem 1rem;
+    color: #000;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .4s ease-in-out;
+}
+
+.card .info .btn:hover {
+    background: #fc5185;
+    color: #fff;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .card .info h1 {
+        font-size: 16px;
+    }
+    .card .info p {
+        font-size: 12px;
+    }
+    .card .info .btn {
+        font-size: 10px;
+    }
+}
+
+/* Container Styling */
+.sdg-targets-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: url('images/bg.jpg') no-repeat center center; /* Add your wave image */
+    background-size: cover; /* Ensures it covers the entire area */
+    padding-bottom: 100px; /* Add space at the bottom */
+    padding-top: 90px;
+}
+
+/* SDG Card */
+.sdg-card {
+    position: relative;
+    width: 450px;
+    height: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Target Number Styling */
+.sdg-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.733); /* Ensures contrast */
+    background: linear-gradient(90deg, var(--ocean-blue-dark) 0%, var(--ocean-blue-light) 55%, var(--ocean-blue-dark) 100%);
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 78, 146, 0.4);
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Slight Hover Animation for a Dynamic Feel */
+.sdg-card:hover .sdg-number {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+/* Hide Content Initially */
+.sdg-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sdg-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Caption Styling */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 119, 182, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Hover Effect - Show Image & Caption, Hide Number */
+.sdg-card:hover .sdg-content {
+    opacity: 1;
+}
+
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+

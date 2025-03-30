@@ -1,0 +1,318 @@
+/*-----------------------------------*\
+      #NAVBAR
+\*-----------------------------------*/
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Transparent dark background */
+    backdrop-filter: blur(5px); /* Adds a blur effect */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #3d84a5;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Underline Effect */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #3d84a5;
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: #3d84a5;  /* Text color change */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0; /* Expands underline from the center */
+}
+
+/*-----------------------------------*\
+      #FOOTER
+\*-----------------------------------*/
+/* Footer Adjustments */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer {
+    background: linear-gradient(to top, #0b3d91, #4065ca);
+    padding: 65px 0 0 0;
+    position: relative;
+    text-align: center;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url('https://www.transparenttextures.com/patterns/waves.png');
+    opacity: 0.5;
+}
+
+.footer-col {
+    width: 30%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    background-color: #ffffff;
+    height: 2px;
+    width: 60px;
+}
+
+.footer-col ul {
+    padding: 0;
+}
+
+.footer-col ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fffefe;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-col .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    font-size: 20px;
+}
+
+.footer-col .social-links a:hover {
+    color: #fafbfd;
+    background-color: #ffffff;
+}
+
+.footer-col .contact-info {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-col .contact-info li {
+    margin-bottom: 20px;
+}
+
+.footer-col .contact-info li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.footer-col .contact-info li a:hover {
+    color: #ffffff;
+}
+
+.footer-col .contact-info li a ion-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    background-color: rgba(128, 128, 128, 0.493);
+    padding: 10px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.copyright-link {
+    text-decoration: underline;
+    color: var(--white);
+}
+
+.copyright-link:hover {
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-col {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+  
+    /*-----------------------------------*\
+      #GO TO TOP
+    \*-----------------------------------*/
+    .go-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #3b83f662; /* Soft blue */
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 24px;
+        cursor: pointer;
+        display: none; /* Initially hidden */
+        z-index: 1000; /* Ensures it's above other elements */
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    .go-top.active {
+        display: block; /* Show when active */
+        opacity: 1;
+    }
+    
+    .go-top i {
+        font-size: 32px;
+    }
+
+
+    /*-----------------------------------*\
+      #FOOTER WAVE ANIMATION
+    \*-----------------------------------*/
+
+
+.waves {
+    position: absolute;
+    top: -50px; /* Moves the waves above the footer */
+    width: 100%;
+    height: 100px; /* Increase height for better visibility */
+    overflow: hidden;
+    line-height: 0;
+    z-index: 20; /* Ensure waves appear above footer */
+}
+
+
+.waves .wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+    background: url('wave.png'); /* Use an SVG or PNG */
+    background-size: 50% 100%;
+    opacity: 0.8;
+    animation: waveAnimation 10s linear infinite;
+    filter: brightness(1.1) contrast(1.2); /* Enhances visibility */
+}
+
+
+#wave1 {
+    animation-delay: 0s;
+    z-index: 3;
+    opacity: 1;
+}
+
+#wave2 {
+    animation-delay: -2s;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+#wave3 {
+    animation-delay: -4s;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+#wave4 {
+    animation-delay: -6s;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
